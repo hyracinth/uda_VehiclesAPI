@@ -8,8 +8,9 @@ import java.math.BigDecimal;
  */
 @Entity
 public class Price {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="VEHICLEID")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "VEHICLEID")
     private Long vehicleId;
 
     private String currency;
