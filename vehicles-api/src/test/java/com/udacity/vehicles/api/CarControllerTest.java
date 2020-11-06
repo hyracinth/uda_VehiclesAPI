@@ -73,6 +73,7 @@ public class CarControllerTest {
     @Test
     public void createCar() throws Exception {
         Car car = getCar();
+        car.setId(1L);
         mvc.perform(
                 post(new URI("/cars"))
                         .content(json.write(car).getJson())
@@ -88,7 +89,6 @@ public class CarControllerTest {
      */
     @Test
     public void listCars() throws Exception {
-        Car selectedCar = getCar();
         mvc.perform(get(new URI("/cars")))
                 .andExpect(status().isOk());
     }
@@ -100,7 +100,6 @@ public class CarControllerTest {
      */
     @Test
     public void findCar() throws Exception {
-        Car selectedCar = getCar();
         mvc.perform(get(new URI("/cars/1")))
                 .andExpect(status().isOk());
     }
